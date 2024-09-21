@@ -34,6 +34,7 @@ const ProductForm = () => {
     axios
       .post("/api/add_product", payload)
       .then((res) => {
+        console.log("TEST ==>", res);
         makeToast("Product added successfully");
 
         setPayload({

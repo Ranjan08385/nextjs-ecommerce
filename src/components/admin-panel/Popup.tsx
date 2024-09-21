@@ -26,6 +26,7 @@ const Popup = ({ setOpenPopup, setUpdateTable }: PropsType) => {
     axios
       .put(`/api/edit_product/${productData._id}`, inputData)
       .then((res) => {
+        console.log("TEST ==>", res);
         makeToast("Product updated successfully!");
         setUpdateTable((prevState) => !prevState);
       })

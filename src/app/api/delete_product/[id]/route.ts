@@ -2,7 +2,13 @@ import Product from "@/lib/models/products";
 import { connectMongoDB } from "@/lib/mongoConnect";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function DELETE(request: NextRequest, URLParams: any) {
+interface PropsType {
+  params: {
+    id: string;
+  };
+}
+
+export async function DELETE(request: NextRequest, URLParams: PropsType) {
   try {
     const id = URLParams.params.id;
 

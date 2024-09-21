@@ -7,6 +7,14 @@ interface PropsType {
   setShowCart: Dispatch<SetStateAction<boolean>>;
 }
 
+interface IProduct {
+  id: string;
+  title: string;
+  img: string;
+  price: number;
+  quantity: number;
+}
+
 const Cart = ({ setShowCart }: PropsType) => {
   const products = useAppSelector((state) => state.cartReducer);
 
@@ -30,7 +38,7 @@ const Cart = ({ setShowCart }: PropsType) => {
         </h3>
 
         <div className="mt-6 space-y-2">
-          {products?.map((item: any) => (
+          {products?.map((item: IProduct) => (
             <CartProduct
               key={item.id}
               id={item.id}

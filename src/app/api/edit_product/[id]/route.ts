@@ -2,7 +2,13 @@ import { connectMongoDB } from "@/lib/mongoConnect";
 import Product from "@/lib/models/products";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function PUT(request: NextRequest, URLParams: any) {
+interface PropsType {
+  params: {
+    id: string;
+  };
+}
+
+export async function PUT(request: NextRequest, URLParams: PropsType) {
   try {
     const body = await request.json();
     const id = URLParams.params.id;
